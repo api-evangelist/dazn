@@ -1,23 +1,100 @@
 aid: dazn
-name: Dazn
-description: 'Dazn is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: DAZN
+description: >-
+  DAZN is a global over-the-top live sports streaming service headquartered in London and owned by
+  Access Industries. Launched in 2015 out of the former Perform Group, it streams boxing, football,
+  MotoGP, UFC and other rights to subscribers across more than 200 countries and territories, and has
+  expanded through the acquisitions of Eleven Group, Foxtel/Kayo Sports and ViewLift, alongside the
+  DAZN Bet and DAZN Media brands. DAZN operates a large Node.js microservice estate on AWS and
+  publishes open source engineering tooling (the Kopytko Roku ecosystem, dazn-lambda-powertools) from
+  its GitHub organization, but it runs no public developer program: there is no developer portal, no
+  API reference, and no machine-readable specification for the consumer platform APIs that power its
+  apps.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/dazn/refs/heads/main/apis.yml
-x-type: company
-x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-12'
 modified: '2026-08-12'
+x-type: company
+x-source: harvest:secondary-market
 tags:
-- Company
+  - Streaming
+  - Sports
+  - Media
+  - Entertainment
+  - Video
+  - OTT
+  - Live Streaming
+  - Broadcasting
+  - Subscription
+  - Open Source
 apis: []
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
 common:
-- type: Website
-  url: https://www.hiive.com/securities/dazn-stock
+  - type: Website
+    url: https://www.dazn.com/
+  - type: GitHubOrganization
+    url: https://github.com/getndazn
+  - type: Blog
+    url: https://medium.com/dazn-tech
+  - type: Support
+    url: https://help.dazn.com/hc/en-us
+  - type: TermsOfService
+    url: https://help.dazn.com/hc/en-gb/articles/16391473315101-TERMS-AND-CONDITIONS-07-November-2025
+  - type: PrivacyPolicy
+    url: https://help.dazn.com/hc/en-us/articles/16394152093597-Privacy-Policy-and-Cookie-Notice
+  - type: StatusPage
+    url: https://status.dazn.com/
+  - type: Security
+    url: https://help.dazn.com/hc/en-us/articles/16471531900317-Global-Responsible-Disclosure-for-Security-Vulnerabilities-Policy
+  - type: SecurityTxt
+    url: well-known/dazn-security.txt
+  - type: WellKnown
+    url: well-known/dazn-well-known.yml
+  - type: VulnerabilityDisclosure
+    url: security/dazn-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/dazn-domain-security.yml
+  - type: Packages
+    url: packages/dazn-packages.yml
+  - type: Lifecycle
+    url: lifecycle/dazn-lifecycle.yml
+  - type: Conformance
+    url: conformance/dazn-conformance.yml
+  - type: Plans
+    url: plans/dazn-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/dazn-rate-limits.yml
+  - type: LLMsTxt
+    url: llms/dazn-llms.txt
+  - type: SourceCode
+    url: https://github.com/getndazn
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 10
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    DAZN is a consumer sports-streaming product with no developer program at all — developer.dazn.com,
+    developers.dazn.com, docs.dazn.com and api.dazn.com have no DNS records, and the only machine-
+    readable document served anywhere on www.dazn.com is an RFC 9116 security.txt, because every other
+    path on that host returns an identical 95,145-byte single-page-app shell.
+  evidence:
+    - url: https://developer.dazn.com/
+      status: 0
+    - url: https://api.dazn.com/
+      status: 0
+    - url: https://www.dazn.com/openapi.json
+      status: 200
+    - url: https://www.dazn.com/.well-known/agent-card.json
+      status: 404
+    - url: https://www.dazn.com/.well-known/security.txt
+      status: 200
+  checked: '2026-08-12'

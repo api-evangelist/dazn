@@ -1,0 +1,179 @@
+generated: '2026-08-12'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=dazn
+note: >-
+  DAZN publishes first-party packages to npm under the @dazn scope, but NONE of them is a client
+  library for a DAZN API — DAZN runs no public developer program. They are internal engineering
+  tooling that DAZN open-sourced: the Kopytko Roku/BrightScript ecosystem (actively maintained
+  through 2026) and dazn-lambda-powertools (AWS Lambda middleware, last released 2021 and effectively
+  abandoned). Because there is no API client library here, this artifact deliberately carries NO
+  `SDKs` pointer in apis.yml — emitting one would credit DAZN with an SDK surface it does not have.
+  PyPI, RubyGems, crates.io, NuGet and Packagist were all checked and hold no first-party DAZN package.
+registries_checked:
+  - {registry: npm, result: 12 first-party packages found}
+  - {registry: pypi, result: none (dazn, dazn-sdk, daznapi all 404)}
+  - {registry: rubygems, result: none (404)}
+  - {registry: crates.io, result: none (0 results)}
+  - {registry: nuget, result: none (0 hits)}
+  - {registry: packagist, result: none (no first-party match)}
+  - {registry: maven-central, result: none}
+packages:
+  - language: brightscript
+    registry: npm
+    name: "@dazn/kopytko-framework"
+    url: https://www.npmjs.com/package/@dazn/kopytko-framework
+    install: npm install @dazn/kopytko-framework
+    repository: https://github.com/getndazn/kopytko-framework
+    official: true
+    kind: framework
+    version: 3.6.0
+    published: '2026-07-15'
+    description: A modern Roku BrightScript framework based on JS-world solutions.
+  - language: brightscript
+    registry: npm
+    name: "@dazn/kopytko-utils"
+    url: https://www.npmjs.com/package/@dazn/kopytko-utils
+    install: npm install @dazn/kopytko-utils
+    repository: https://github.com/getndazn/kopytko-utils
+    official: true
+    kind: library
+    version: 2.8.1
+    published: '2026-06-18'
+    description: Collection of utility functions for BrightScript applications.
+  - language: brightscript
+    registry: npm
+    name: "@dazn/kopytko-unit-testing-framework"
+    url: https://www.npmjs.com/package/@dazn/kopytko-unit-testing-framework
+    install: npm install @dazn/kopytko-unit-testing-framework
+    repository: https://github.com/getndazn/kopytko-unit-testing-framework
+    official: true
+    kind: testing
+    version: 2.6.5
+    published: '2026-06-18'
+    description: Roku Unit Testing Framework extended with extra asserts and a mocking mechanism.
+  - language: javascript
+    registry: npm
+    name: "@dazn/kopytko-packager"
+    url: https://www.npmjs.com/package/@dazn/kopytko-packager
+    install: npm install @dazn/kopytko-packager
+    repository: https://github.com/getndazn/kopytko-packager
+    official: true
+    kind: build-tool
+    version: 1.4.3
+    published: '2026-07-06'
+    description: Package builder for the Roku platform.
+  - language: javascript
+    registry: npm
+    name: "@dazn/kopytko-cli"
+    url: https://www.npmjs.com/package/@dazn/kopytko-cli
+    install: npm install -g @dazn/kopytko-cli
+    repository: https://github.com/getndazn/kopytko-cli
+    official: true
+    kind: cli
+    version: 2.1.1
+    published: '2026-04-01'
+    description: >-
+      Command line interface for the Kopytko ecosystem. This is a first-party DAZN CLI, but it drives
+      Roku app development — it is not an API client CLI, so no `CLI` pointer is wired for it.
+  - language: javascript
+    registry: npm
+    name: "@dazn/eslint-plugin-kopytko"
+    url: https://www.npmjs.com/package/@dazn/eslint-plugin-kopytko
+    install: npm install --save-dev @dazn/eslint-plugin-kopytko
+    repository: https://github.com/getndazn/kopytko-eslint-plugin
+    official: true
+    kind: linting
+    version: 2.1.0
+    published: '2022-03-04'
+    description: BrightScript rules for ESLint.
+  - language: javascript
+    registry: npm
+    name: "@dazn/lambda-powertools-logger"
+    url: https://www.npmjs.com/package/@dazn/lambda-powertools-logger
+    install: npm install @dazn/lambda-powertools-logger
+    repository: https://github.com/getndazn/dazn-lambda-powertools
+    official: true
+    kind: tooling
+    version: 1.28.1
+    published: '2020-12-10'
+    description: >-
+      Structured logger for the dazn-lambda-powertools family. Last published 2020-12-10 — the whole
+      lambda-powertools monorepo has been dormant since 2021-05.
+  - language: javascript
+    registry: npm
+    name: "@dazn/lambda-powertools-pattern-basic"
+    url: https://www.npmjs.com/package/@dazn/lambda-powertools-pattern-basic
+    install: npm install @dazn/lambda-powertools-pattern-basic
+    repository: https://github.com/getndazn/dazn-lambda-powertools
+    official: true
+    kind: tooling
+    version: 1.29.0
+    published: '2021-05-04'
+    description: Basic middleware pattern for Lambda functions; newest release in the powertools family.
+  - language: javascript
+    registry: npm
+    name: "@dazn/lambda-powertools-http-client"
+    url: https://www.npmjs.com/package/@dazn/lambda-powertools-http-client
+    install: npm install @dazn/lambda-powertools-http-client
+    repository: https://github.com/getndazn/dazn-lambda-powertools
+    official: true
+    kind: tooling
+    version: 1.28.1
+    published: '2020-12-10'
+    description: HTTP client that forwards correlation IDs captured by the powertools middleware.
+  - language: javascript
+    registry: npm
+    name: "@dazn/pensieve"
+    url: https://www.npmjs.com/package/@dazn/pensieve
+    install: npm install @dazn/pensieve
+    repository: https://github.com/getndazn/pensieve
+    official: true
+    kind: tooling
+    version: 0.4.6
+    published: '2020-05-20'
+    description: Node.js/TypeScript config and secrets retrieval helper.
+  - language: javascript
+    registry: npm
+    name: "@dazn/chaos-squirrel-runner-wrapper"
+    url: https://www.npmjs.com/package/@dazn/chaos-squirrel-runner-wrapper
+    install: npm install @dazn/chaos-squirrel-runner-wrapper
+    repository: https://github.com/getndazn/chaos-squirrel
+    official: true
+    kind: tooling
+    version: 0.10.1
+    published: '2021-07-20'
+    description: Chaos-engineering wrapper. The upstream chaos-squirrel repository is archived.
+  - language: javascript
+    registry: npm
+    name: "@dazn/datadog-metrics"
+    url: https://www.npmjs.com/package/@dazn/datadog-metrics
+    install: npm install @dazn/datadog-metrics
+    repository: null
+    official: true
+    kind: tooling
+    version: 1.5.0
+    published: '2019-08-30'
+    description: Datadog metrics recorder. Oldest first-party package still on the registry.
+  - language: javascript
+    registry: npm
+    name: ios-dazn-sdk
+    url: https://www.npmjs.com/package/ios-dazn-sdk
+    install: npm install ios-dazn-sdk
+    repository: null
+    official: true
+    kind: placeholder
+    version: 1.0.1
+    published: '2024-12-11'
+    description: >-
+      Published by dx@dazn.com (npm user "automation-drone"), so it is first-party by publisher, but
+      it is an empty placeholder — description "iOS SDK", no README, no repository, no homepage, both
+      1.0.0 and 1.0.1 pushed the same day and never touched since. Recorded as a name registration,
+      NOT as a usable SDK.
+currency:
+  actively_maintained: 5   # Kopytko family, all released in 2026
+  dormant: 7               # lambda-powertools + pensieve + chaos-squirrel + datadog-metrics + eslint plugin
+  placeholder: 1
+  note: >-
+    The abandonment signal here is clean: dazn-lambda-powertools last shipped 2021-05-04 and its
+    chaos-squirrel sibling repo is archived, while the Kopytko Roku ecosystem is on a 2026 release
+    cadence. DAZN's open-source investment moved from serverless backend tooling to TV-device tooling.

@@ -1,0 +1,32 @@
+generated: '2026-08-12'
+method: searched
+source: https://status.dazn.com/
+note: >-
+  DAZN publishes no API versioning policy, no deprecation policy and no developer SLA, because it
+  runs no public developer program. What it does publish is a consumer-facing status page. The
+  lifecycle signals below are the ones that genuinely exist; the rest are recorded as absent rather
+  than omitted.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: No public API, therefore no published versioning scheme.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No deprecation policy published. RFC 8594 Sunset/Deprecation header support unverifiable — no documented API surface to observe it on.
+sla:
+  url: null
+  uptime_target: null
+  note: Consumer subscription terms only (help.dazn.com); no developer/API SLA.
+status_page: https://status.dazn.com/
+status_page_detail:
+  title: DAZN Status Page
+  scope: consumer streaming service availability, segmented by country
+  technology: React Static (self-hosted, not Statuspage.io/Atlassian)
+  http_status: 200
+  feed: none published (no RSS/Atom/JSON status API found)
+deprecated_operations: []
+evidence:
+  - {url: 'https://status.dazn.com/', status: 200, kind: status page}
+  - {url: 'https://www.dazn.com/.well-known/security.txt', status: 200, kind: 'security.txt Expires: 2026-12-31 — the only dated lifecycle commitment DAZN publishes'}

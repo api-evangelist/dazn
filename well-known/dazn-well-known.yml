@@ -1,0 +1,40 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.dazn.com/.well-known/
+host: https://www.dazn.com
+note: >-
+  www.dazn.com is a client-rendered single-page application that answers HTTP 200 with an identical
+  95,145-byte HTML shell for every unknown path (https://www.dazn.com/openapi.json and
+  https://www.dazn.com/llms.txt both return that shell, not a document). The /.well-known/ prefix is
+  the one place the edge returns real 404s, so the probe results below are trustworthy. Exactly one
+  real document is served: an RFC 9116 security.txt. Every other well-known path 404s. No API host
+  is published by DAZN, so there is no second host to probe.
+documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    bytes: 265
+    file: dazn-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+other_paths:
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    note: real file; disallows /app/, /amp/, /highlight/ and all query strings; points at /sitemap.xml
+  - path: /llms.txt
+    status: 200
+    note: NOT a document — SPA catch-all shell (text/html, 95,145 bytes). Treated as a miss.
+  - path: /openapi.json
+    status: 200
+    note: NOT a spec — same SPA catch-all shell. Treated as a miss.

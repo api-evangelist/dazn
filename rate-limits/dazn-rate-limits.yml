@@ -1,0 +1,17 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.dazn.com/
+limit_count: 0
+note: >-
+  No published rate limits. DAZN documents no API, so there is no rate-limit reference, no documented
+  window/quota, and no documented response headers. The app backend hosts that were reachable
+  anonymously (startup.core.indazn.com, api.playback.indazn.com) returned 404 JSON on every probed
+  path and emitted no X-RateLimit-*, RateLimit-* or Retry-After headers on those responses, so not
+  even an observed runtime signal is available to record.
+limits: []
+headers: []
+evidence:
+  - {url: 'https://developer.dazn.com/', status: 0, note: 'DNS does not resolve'}
+  - {url: 'https://docs.dazn.com/', status: 0, note: 'DNS does not resolve'}
+  - {url: 'https://startup.core.indazn.com/', status: 404, note: 'live app backend; JSON 404, no rate-limit headers observed'}
+  - {url: 'https://api.playback.indazn.com/', status: 404, note: 'live app backend; JSON 404, no rate-limit headers observed'}

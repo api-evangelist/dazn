@@ -1,0 +1,17 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.dazn.com/
+plan_count: 0
+note: >-
+  DAZN publishes NO API plans or developer pricing, because it operates no public developer program.
+  It does sell consumer streaming subscriptions (monthly/annual tiers that vary by country), but
+  those are entertainment subscriptions, not API access tiers, and they are not recorded here as
+  plans — doing so would misrepresent a consumer paywall as an API commercial model. The consumer
+  plan pages could not be captured as evidence in any case: www.dazn.com is a client-rendered SPA
+  that returns HTTP 200 with an identical 95,145-byte HTML shell for every path, including paths
+  that do not exist, so a status code from that host proves nothing about a page's existence.
+plans: []
+evidence:
+  - {url: 'https://www.dazn.com/en-GB/pricing', status: 200, note: 'soft-200 SPA shell, byte-identical to /openapi.json — not usable as evidence of a pricing page'}
+  - {url: 'https://www.dazn.com/sitemap.xml', status: 200, note: 'sitemap index carries only content pages (competition/competitor/home/article); no pricing, signup or plan URLs are declared'}
+  - {url: 'https://developer.dazn.com/', status: 0, note: 'DNS does not resolve — no developer portal, therefore no API pricing surface'}

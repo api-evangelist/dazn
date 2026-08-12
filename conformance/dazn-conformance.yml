@@ -1,0 +1,48 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.dazn.com/.well-known/security.txt
+note: >-
+  DAZN has no public OpenAPI, no GraphQL SDL and no MCP surface, so the usual spec-derived
+  conformance signals cannot be computed. The only cross-cutting standard DAZN demonstrably conforms
+  to is RFC 9116 (security.txt), which was fetched and parsed. Everything else below is recorded
+  false with the reason, not asserted. No `Compliance` pointer is wired: DAZN publishes no
+  certification or compliance program page (trust.dazn.com and security.dazn.com do not resolve).
+standards:
+  - id: rfc9116-security-txt
+    conforms: true
+    evidence: >-
+      https://www.dazn.com/.well-known/security.txt returns 200 text/plain with the required Contact
+      and Expires fields, plus Preferred-Languages, Canonical, Policy and Hiring.
+  - id: rfc8615-well-known-uris
+    conforms: true
+    evidence: security.txt served under the /.well-known/ prefix with a matching Canonical field.
+  - id: robots-txt
+    conforms: true
+    evidence: https://www.dazn.com/robots.txt returns 200 text/plain and declares a Sitemap.
+  - id: sitemaps-xml
+    conforms: true
+    evidence: https://www.dazn.com/sitemap.xml is a valid sitemapindex with per-locale child sitemaps.
+  - id: oauth2
+    conforms: false
+    evidence: /.well-known/oauth-authorization-server 404; no public OAuth documentation.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration 404.
+  - id: openapi
+    conforms: false
+    evidence: no OpenAPI at any probed path on www.dazn.com or the app backend hosts.
+  - id: asyncapi
+    conforms: false
+    evidence: no published event or webhook surface.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      app backend hosts return plain JSON error envelopes, not application/problem+json —
+      startup.core.indazn.com returns {"message","error","statusCode"} and api.playback.indazn.com
+      returns an OData-style {"odata.error":{"code","message"}}. Neither is RFC 9457.
+  - id: a2a-agent-card
+    conforms: false
+    evidence: /.well-known/agent-card.json and /.well-known/agent.json both 404 on every probed host.
+  - id: llms-txt
+    conforms: false
+    evidence: /llms.txt returns the SPA catch-all HTML shell, not an llms.txt document.
